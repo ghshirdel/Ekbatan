@@ -1,0 +1,27 @@
+﻿@model Ekbatan.DomainClasses.FrontAge.FrontAge
+
+@{
+    ViewData["Title"] = "حذف";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<h3 class="btn btn-danger"><i class="fa fa-trash"> </i> آیا از حذف نمای جاری مطمئن هستید؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FrontAge_Desc):
+        </dt>
+        <dd style="color:brown">
+            @Html.DisplayFor(model => model.FrontAge_Desc)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FrontAge_ID" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">بازگشت به لیست نماهای ساختمان ثبت شده</a>
+    </form>
+</div>

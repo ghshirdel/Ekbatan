@@ -1,0 +1,51 @@
+﻿@model Ekbatan.DomainClasses.Project.Project
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>آیا از حذف رکورد جاری مطمئن هسنید؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Parv_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Parv_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PStart_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PStart_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PEnd_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PEnd_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Payan_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payan_Date)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Project_ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">بازگشت به لیست</a>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+﻿@model Ekbatan.DomainClasses.Karbari.Karbari
+
+@{
+    ViewData["Title"] = "حذف";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<h3 class="btn btn-danger">آیا از حذف نوع کاربری ثبت شده مطمئن هستید؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Karbari_Desc) :
+        </dt>
+        <dd style="color:red">
+            @Html.DisplayFor(model => model.Karbari_Desc)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Karbari_ID" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info">بازگشت به لیست کاربری های ثبت شده</a>
+    </form>
+</div>

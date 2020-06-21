@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Ekbatan.ViewModels.Project.ShowProjectViewModel>
+    <section class="category-section border-radius">
+        <header><i class="fa fa-folder-open-o"></i> <h3> پروژه ها </h3></header>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a asp-area="Admin" 
+                       asp-controller="Projects" 
+                       asp-action="Index"> @item.Project_name  
+                       <span>@item.ProjectCount</span></a>
+                </li>
+            }
+        </ul>
+    </section>

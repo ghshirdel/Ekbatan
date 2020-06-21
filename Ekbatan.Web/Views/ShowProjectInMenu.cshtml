@@ -1,0 +1,8 @@
+﻿@using Ekbatan.Services.Repositories
+@inject IProjectRepository projectRepository
+
+
+            @foreach (var item in projectRepository.GetAllProjects())
+            {
+                <li><a href=""> @item.Project_name</a></li>
+            }

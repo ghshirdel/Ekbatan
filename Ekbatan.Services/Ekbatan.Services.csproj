@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ekbatan.DataLayer\Ekbatan.DataLayer.csproj" />
+    <ProjectReference Include="..\Ekbatan.DomainClasses\Ekbatan.DomainClasses.csproj" />
+    <ProjectReference Include="..\Ekbatan.ViewModels\Ekbatan.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

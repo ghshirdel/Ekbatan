@@ -1,0 +1,36 @@
+﻿@model Ekbatan.DomainClasses.MContract.SubContract
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Melk_ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Melk_ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer_ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sahm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sahm)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SubContract_ID">ویرایش</a> |
+    <a asp-action="Index">بازگشت به لیست</a>
+</div>

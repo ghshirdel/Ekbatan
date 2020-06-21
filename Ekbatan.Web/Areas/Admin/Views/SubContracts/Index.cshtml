@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ekbatan.DomainClasses.MContract.SubContract>
+
+@{
+    ViewData["Title"] = "فهرست";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2><i class="fas fa-list-ul"></i>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"> <i class="fas fa-plus"></i> افزودن به لیست</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Melk_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sahm)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Melk_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sahm)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SubContract_ID" class="btn btn-info"><i class="fas fa-edit"></i>ویرایش</a> |
+                <a asp-action="Details" asp-route-id="@item.SubContract_ID" class="btn btn-success"><i class="fas fa-info-circle"></i>جزئیات</a> |
+                <a asp-action="Delete" asp-route-id="@item.SubContract_ID" class="btn btn-danger"><i class="fas fa-trash"></i>حذف</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

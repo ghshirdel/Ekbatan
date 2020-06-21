@@ -1,0 +1,26 @@
+﻿@model Ekbatan.DomainClasses.MelkType.MelkType
+
+@{
+    ViewData["Title"] = "حذف";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<h2 class="btn btn-warning"> <i class="fa fa-trash"></i> آیا از حذف نوع ملک ایجاد شده مطمئن هستید؟</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeMelk_Desc):
+        </dt>
+        <dd style="color:brown">
+            @Html.DisplayFor(model => model.TypeMelk_Desc)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MelkType_ID" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info"> بازگشت به لیست نوع املاک ثبت شده </a>
+    </form>
+</div>

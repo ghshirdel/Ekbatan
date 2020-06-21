@@ -1,0 +1,134 @@
+﻿@model Ekbatan.DomainClasses.Melk
+
+@{
+    ViewData["Title"] = "ویرایش";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h4 class="btn btn-primary"> <i class="fa fa-edit"></i> ویرایش ملک ثبت شده</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Melk_ID" />
+            <div class="form-group">
+                <label asp-for="Project_ID" class="control-label"></label>
+                <select asp-for="Project_ID" class="form-control" size="1" asp-items="ViewBag.Project_ID"></select>
+                <span asp-validation-for="Project_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MelkType_ID" class="control-label"></label>
+                <select asp-for="MelkType_ID" class="form-control" size="1" asp-items="ViewBag.MelkType_ID"></select>
+                <span asp-validation-for="MelkType_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MelkPosition_ID" class="control-label"></label>
+                <select asp-for="MelkPosition_ID" class="form-control" size="1" asp-items="ViewBag.MelkPosition_ID"></select>
+                <span asp-validation-for="MelkPosition_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Karbari_ID" class="control-label"></label>
+                <select asp-for="Karbari_ID" class="form-control" size="1" asp-items="ViewBag.Karbari_ID"></select>
+                <span asp-validation-for="Karbari_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FrontAge_ID" class="control-label"></label>
+                <select asp-for="FrontAge_ID" class="form-control" size="1" asp-items="ViewBag.FrontAge_ID"></select>
+                <span asp-validation-for="FrontAge_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShPosition" class="control-label"></label>
+                <input asp-for="ShPosition" class="form-control" />
+                <span asp-validation-for="ShPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PAsli" class="control-label"></label>
+                <input asp-for="PAsli" class="form-control" />
+                <span asp-validation-for="PAsli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PFarei" class="control-label"></label>
+                <input asp-for="PFarei" class="form-control" />
+                <span asp-validation-for="PFarei" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MArseh" class="control-label"></label>
+                <input asp-for="MArseh" class="form-control" />
+                <span asp-validation-for="MArseh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MAyan" class="control-label"></label>
+                <input asp-for="MAyan" class="form-control" />
+                <span asp-validation-for="MAyan" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CFloor" class="control-label"></label>
+                <input asp-for="CFloor" class="form-control" />
+                <span asp-validation-for="CFloor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NFloor" class="control-label"></label>
+                <input asp-for="NFloor" class="form-control" />
+                <span asp-validation-for="NFloor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Balkon" /> @Html.DisplayNameFor(model => model.Balkon)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Anbari" /> @Html.DisplayNameFor(model => model.Anbari)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="MAnbari" class="control-label"></label>
+                <input asp-for="MAnbari" class="form-control" />
+                <span asp-validation-for="MAnbari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Parking" /> @Html.DisplayNameFor(model => model.Parking)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Elevator" /> @Html.DisplayNameFor(model => model.Elevator)
+                    </label>
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="Contract_ID" class="control-label"></label>
+                    <input asp-for="Contract_ID" class="form-control" />
+                    <span asp-validation-for="Contract_ID" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">بازگشت به لیست املاک ثبت شده</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

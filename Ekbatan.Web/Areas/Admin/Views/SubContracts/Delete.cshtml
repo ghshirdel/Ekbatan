@@ -1,0 +1,40 @@
+﻿@model Ekbatan.DomainClasses.MContract.SubContract
+
+@{
+    ViewData["Title"] = "حذف";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>حذف رکورد جاری</h2>
+
+<h3>آیا از حذف رکورد حاری مطمئن هستید؟</h3>
+<div>
+    <h4>SubContract</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Melk_ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Melk_ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer_ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sahm)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sahm)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SubContract_ID" />
+        <input type="submit" value="حذف" class="btn btn-default" /> |
+        <a asp-action="Index">بازگشت به لیست</a>
+    </form>
+</div>

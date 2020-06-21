@@ -1,0 +1,84 @@
+﻿@using Ekbatan.Services.Repositories
+@using Ekbatan.DomainClasses
+@inject IMelkRepository melkRepository
+
+@model Ekbatan.DomainClasses.MContract.MContract
+@{
+    ViewData["Title"] = "افزودن";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+@functions{
+    public void initMelkID(int melk_Id)
+    {
+        Model.Mel_ID = melk_Id;
+    }
+}
+<h4 class="btn btn-primary"> <i class="fa fa-plus"></i>افزون قرارداد </h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Contract_No" class="control-label"></label>
+                <input asp-for="Contract_No" class="form-control" />
+                <span asp-validation-for="Contract_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contract_Date" class="control-label"></label>
+                <input asp-for="Contract_Date" class="form-control" type="datetime" />
+                <span asp-validation-for="Contract_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mel_ID" class="control-label"></label>
+                <input asp-for="Mel_ID" class="form-control" id="NoMelk" />
+                <span asp-validation-for="Mel_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>شماره ملک</th>
+                <th>آدرس</th>
+                <th>پلاک اصلی</th>
+                <th>پلاک فرعی</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in melkRepository.GetAllMelk())
+            {
+                <tr>
+                    <th>@item.Melk_ID</th>
+                    <td>@item.Address</td>
+                    <td>@item.PAsli</td>
+                    <td>@item.PFarei</td>
+                    <td>
+                        <a asp-route-id="@item.Melk_ID" class="btn btn-success"
+                           onclick="myFunction(@item.Melk_ID); return false;">
+                            <i class="fa fa-sellsy"></i>انتخاب ملک
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-info"><i class="fa fa-backward"> </i>بازگشت به لیست قراردادها</a>
+</div>
+<script>
+    function myFunction(i) {
+        
+        document.getElementById("NoMelk").value =i;
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

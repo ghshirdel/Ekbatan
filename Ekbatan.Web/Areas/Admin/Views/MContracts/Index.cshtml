@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ekbatan.DomainClasses.MContract.MContract>
+
+@{
+    ViewData["Title"] = "فهرست";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h1><i class="fa fa-list-ul"></i> @ViewData["Title"] </h1>
+<hr />
+<p>
+    <a asp-action="Create" class="btn btn-primary"> <i class="fa fa-plus"></i> ثبت قرارداد جدید</a>
+</p>
+<table class="table table-condensed  table-hover">
+    
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Contract_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contract_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mel_ID)
+            </th>
+            <th></th>
+        </tr>
+    
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="table-hover">
+            <td>
+                @Html.DisplayFor(modelItem => item.Contract_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contract_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mel_ID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Contract_ID" class="btn btn-info"><i class="fa fa-edit"></i>ویرایش</a> |
+                <a asp-action="Details" asp-route-id="@item.Contract_ID" class="btn btn-success"><i class="fa fa-info-circle"></i>جزئیات</a> |
+                <a asp-action="Delete" asp-route-id="@item.Contract_ID" class="btn btn-danger"><i class="fa fa-trash"></i>حذف</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

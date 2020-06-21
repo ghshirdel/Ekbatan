@@ -1,0 +1,44 @@
+﻿@model Ekbatan.DomainClasses.MContract.SubContract
+
+@{
+    ViewData["Title"] = "ویرایش";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<h4>SubContract</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SubContract_ID" />
+            <div class="form-group">
+                <label asp-for="Melk_ID" class="control-label"></label>
+                <input asp-for="Melk_ID" class="form-control" />
+                <span asp-validation-for="Melk_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_ID" class="control-label"></label>
+                <input asp-for="Customer_ID" class="form-control" />
+                <span asp-validation-for="Customer_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sahm" class="control-label"></label>
+                <input asp-for="Sahm" class="form-control" />
+                <span asp-validation-for="Sahm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">بازگشت به لیست</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

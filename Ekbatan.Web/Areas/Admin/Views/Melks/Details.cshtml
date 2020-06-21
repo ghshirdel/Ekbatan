@@ -1,0 +1,134 @@
+﻿@model Ekbatan.DomainClasses.Melk
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h4 class="btn btn-primary"> <i class="fa fa-edit"></i> جزئیات املاک ثبت شده</h4>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            نام پروژه:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project.Project_name)
+        </dd>
+        <dt>
+            نوع ملک:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MelkType.TypeMelk_Desc)
+        </dd>
+        <dt>
+            وضعیت ملک:
+        <dd>
+            @Html.DisplayFor(model => model.MelkPosition.MelkPosition_Desc)
+        </dd>
+
+        <dt>
+            نمای ملک:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FrontAge.FrontAge_Desc)
+        </dd>
+        <dt>
+            کاربری ملک :
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Karbari.Karbari_Desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShPosition):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShPosition)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PAsli):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PAsli)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PFarei):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PFarei)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MArseh):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MArseh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MAyan):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MAyan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CFloor):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CFloor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NFloor):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NFloor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balkon):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Balkon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Anbari):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Anbari)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MAnbari):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MAnbari)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Parking):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Parking)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Elevator):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Elevator)
+        </dd>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.Contract_ID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Contract_ID)
+            </dd>*@
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Melk_ID" class="btn btn-danger"> ویرایش</a> |
+    <a asp-action="Index" class="btn btn-info">بازگشت به لیست املاک ثبت شده</a>
+</div>

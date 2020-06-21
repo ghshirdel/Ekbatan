@@ -1,0 +1,27 @@
+﻿@model Ekbatan.DomainClasses.MelkPosition.MelkPosition
+
+@{
+    ViewData["Title"] = "حذف";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<h2 class="btn btn-warning"> <i class="fa fa-trash"></i> آیا از حذف نوع موقعیت ملک ایجاد شده مطمئن هستید؟</h2>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MelkPosition_Desc) :
+        </dt>
+        <dd style="color:brown;border:double; margin-right:auto">
+            @Html.DisplayFor(model => model.MelkPosition_Desc)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MelkPosition_ID" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info"> بازگشت به لیست نوع موقعیت املاک ثبت شده </a>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+﻿@model Ekbatan.DomainClasses.Project.Project
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>جزئیات پروژه</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Parv_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Parv_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PStart_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PStart_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PEnd_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PEnd_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Payan_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Payan_Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Project_ID"> <i class="fa fa-edit"></i> ویرایش  </a> |
+    <a asp-action="Index" class="btn btn-info"> <i class="fa fa-backward"></i>  بازگشت به لیست</a>
+</div>

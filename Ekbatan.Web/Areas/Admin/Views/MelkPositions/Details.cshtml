@@ -1,0 +1,24 @@
+﻿@model Ekbatan.DomainClasses.MelkPosition.MelkPosition
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2 class="btn btn-primary"><i class="fa fa-edit"></i>جزئیات موقعیت ملک</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MelkPosition_Desc):
+        </dt>
+        <dd style="color:brown">
+            @Html.DisplayFor(model => model.MelkPosition_Desc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MelkPosition_ID" class="btn btn-success">ویرایش</a> |
+    <a asp-action="Index" class="btn btn-info"> بازگشت به لیست نوع موقعیت املاک ثبت شده </a>
+</div>

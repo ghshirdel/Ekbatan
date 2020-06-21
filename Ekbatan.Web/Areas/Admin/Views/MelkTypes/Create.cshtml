@@ -1,0 +1,33 @@
+﻿@model Ekbatan.DomainClasses.MelkType.MelkType
+
+@{
+    ViewData["Title"] = "افزودن";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2 class="btn btn-primary"><i class="fa fa-plus"></i>افزودن نوع املاک</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TypeMelk_Desc" class="control-label"></label>
+                <input asp-for="TypeMelk_Desc" class="form-control" />
+                <span asp-validation-for="TypeMelk_Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info"> بازگشت به لیست نوع املاک ثبت شده </a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DNTPersianUtils.Core" Version="3.6.5" />
+    <PackageReference Include="MD.PersianDateTime.Standard" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+    <!--<PackageReference Include="PagedList.Mvc" Version="4.5.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\ImageSlider\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ekbatan.DataLayer\Ekbatan.DataLayer.csproj" />
+    <ProjectReference Include="..\Ekbatan.DomainClasses\Ekbatan.DomainClasses.csproj" />
+    <ProjectReference Include="..\Ekbatan.Services\Ekbatan.Services.csproj" />
+    <ProjectReference Include="..\Ekbatan.ViewModels\Ekbatan.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+﻿@model Ekbatan.DomainClasses.Project.Project
+
+@{
+    ViewData["Title"] = "افزودن";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>پروژه چدید</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Project_name" class="control-label"></label>
+                <input asp-for="Project_name" class="form-control" />
+                <span asp-validation-for="Project_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Parv_Date" class="control-label"></label>
+                <input asp-for="Parv_Date" class="form-control" type="datetime" autocomplete="off"/>
+                <span asp-validation-for="Parv_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PStart_Date" class="control-label"></label>
+                <input asp-for="PStart_Date" class="form-control" type="datetime" autocomplete="off"/>
+                <span asp-validation-for="PStart_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PEnd_Date" class="control-label"></label>
+                <input asp-for="PEnd_Date" class="form-control" type="datetime" autocomplete="off"/>
+                <span asp-validation-for="PEnd_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payan_Date" class="control-label"></label>
+                <input asp-for="Payan_Date" class="form-control" type="datetime" autocomplete="off"/>
+                <span asp-validation-for="Payan_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info"> <i class="fa fa-backward"></i>  بازگشت به لیست</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

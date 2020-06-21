@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html class="no-js" dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <title> شرکت نوسازی و عمران اکباتان </title>
+    <base href="">
+    <meta name="googlebot" content="index,follow">
+    <meta name="robots" content="noodp,noydir">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/BootstrapJalaliDatePicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/BootstrapJalaliDatePicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/BootstrapJalaliDatePicker/bootstrap-datepicker.min.js"></script>
+</head>
+<body>
+    <script src="/js/jquery.min.js"></script>
+
+
+    <!-- Top Menu -->
+    <div class="top-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-5">
+                    <ul>
+                        <li><a href=""><i class="fa fa-home"></i></a></li>
+                        <li><a href=""><i class="fa fa-question-circle"></i></a></li>
+                        <li><a href=""><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-7">
+                    <span>امروز : @DateTime.Now.ToShortDateString()</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Menu -->
+    <!-- header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <a href="" class="logo"><img src="img/logo.png" alt="" title=""></a>
+                    <div class="left-side">
+                        <h1><a href="">شرکت نوسازی و عمران اکباتان</a></h1>
+                        <h2> پایگاه اطلاع رسانی شرکت</h2>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <form action="" method="get" class="border-radius">
+                        <input class="border-radius" type="text" placeholder=" جستجو کنید ... ">
+                        <button><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- menu -->
+    <nav class="main-menu">
+        <div class="container">
+            <span><i class="fa fa-th-list"></i></span>
+            <ul>
+                <li><a asp-area="default" asp-controller="Home" asp-action="index"> صفحه اصلی </a></li>
+                <li>
+                    <span>پروژه های عمرانی</span>
+                    <ul>
+                        <partial name="/Views/ShowProjectInMenu.cshtml" />
+                    </ul>
+                </li>
+
+                <li>
+                    <span>تعاریف پایه املاک</span>
+                    <ul>
+                        <li>
+                            <a asp-area="Admin" asp-controller="Melks" asp-action="Index">املاک</a>
+                        </li>
+                        <li>
+                            <a asp-area="Admin" asp-controller="MelkTypes" asp-action="Index">نوع ملک</a>
+                        </li>
+                        <li>
+                            <a asp-area="Admin" asp-controller="MelkPositions" asp-action="Index">موقعیت ملک</a>
+                        </li>
+                        <li>
+                            <a asp-area="Admin" asp-controller="FrontAges" asp-action="Index">نمای ملک</a>
+                        </li>
+                        <li>
+                            <a asp-area="Admin" asp-controller="Karbaris" asp-action="Index">کاربری ملک</a>
+                        </li>
+                    </ul>
+                <li>
+              
+                    <span> فروش    </span>
+              
+                <ul>
+                    <li>
+                        <a asp-area="Admin" asp-controller="Customers" asp-action="Index">مشتریان</a>
+                    </li>
+
+                    <li>
+                        <a asp-area="Admin" asp-controller="Mcontracts" asp-action="Index">قراردادها</a>
+                    </li>
+                </ul>
+
+                <li />
+            </ul>
+
+        </div>
+    </nav>
+    <!-- End menu -->
+
+    <div class="container margin-top-30">
+        <div class="row">
+
+            <aside class="col-md-4 col-sm-12 col-xs-12 pull-right">
+
+                @await Component.InvokeAsync("ShowProjectComponent")
+                <!-- most views news -->
+                <section class="last-news-side border-radius">
+                    <header><i class="icons icon-star"></i> <h3> پربازدیدترین پروژه ها </h3></header>
+                    <ul>
+                        <li>
+                            <img class="border-radius" src="img/thumb.png">
+                            <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
+                            <span>انتشار : 15/08/1395</span>
+                        </li>
+                        <li>
+                            <img class="border-radius" src="img/thumb.png">
+                            <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
+                            <span>انتشار : 15/08/1395</span>
+                        </li>
+                        <li>
+                            <img class="border-radius" src="img/thumb.png">
+                            <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
+                            <span>انتشار : 15/08/1395</span>
+                        </li>
+                        <li>
+                            <img class="border-radius" src="img/thumb.png">
+                            <h2> <a href="">عنوان خبر در این ناحیه قرار میگیرد</a></h2>
+                            <span>انتشار : 15/08/1395</span>
+                        </li>
+                    </ul>
+                </section>
+                <!-- end most views news -->
+            </aside>
+
+            <div class="col-md-8 col-sm-12 col-xs-12 ">
+
+                <!-- slider -->
+                @RenderBody()
+                <!-- End last news -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <section class="access-links">
+                        <ul>
+                            <li><a href=""> صفحه اصلی </a></li>
+                            <li><a href=""> قوانین سایت  </a></li>
+                            <li><a href=""> راهنمای سایت  </a></li>
+                            <li><a href=""> پیوندهای سایت </a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-md-5 col-md-offset-1 col-sm-12 col-xs-12">
+                    <div class="socials">
+                        <span> شبکه های اجتماعی  سایت</span>
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                        <a href=""><i class="fa fa-paper-plane"></i></a>
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <p>
+                        تمامی حقوق مادی و معنوی این طرح متعلق به شرکت نوسازی و عمران اکباتان می باشد و کپی برداری از این طرح غیر اخلاقی می باشد.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/Scripts/BootstrapJalaliDatePicker/bootstrap-datepicker.min.js"></script>
+    <script src="/Scripts/BootstrapJalaliDatePicker/bootstrap-datepicker.fa.min.js"></script>
+
+
+
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="~/js/script.js"></script>
+
+
+
+    @RenderSection("Scripts", false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input[type=datetime]').datepicker({ dateFormat: "yy/mm/dd", isRTL: true, showButtonPanel: true });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Ekbatan.DomainClasses.Project.Project>
+
+@{
+    ViewData["Title"] = " فهرست پروژه ها";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2><i class="fa fa-list-ul"></i>@ViewData["Title"]</h2>
+<br />
+
+<p>
+    <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>  افزودن به لیست</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parv_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PStart_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PEnd_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payan_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Parv_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PStart_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PEnd_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payan_Date)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Project_ID" class="btn btn-info"><i class="fa fa-edit"></i>ویرایش</a> |
+                    <a asp-action="Details" asp-route-id="@item.Project_ID" class="btn btn-success"><i class="fa fa-info-circle"></i>جزئیات</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Project_ID" class="btn btn-danger"><i class="fa fa-trash"></i>حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,126 @@
+﻿@*@using PagedList.Mvc*@
+@model IEnumerable<Ekbatan.DomainClasses.Melk>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewData["Title"] = " فهرست املاک";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+<h2><i class="fa fa-list-ul"> </i>@ViewData["Title"] </h2>
+<br />
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fa fa-plus"></i> افزودن به لیست املاک
+    </a>
+</p>
+@*@{
+        var t = 0;
+    }
+
+    @Html.DropDownList("Project_ID", (SelectList)ViewBag.Project_ID, "انتخاب پروژه",
+    new { @onchange = "myfunction(this.value)" })*@
+
+@*<input asp-for="@t" id="h" />*@
+@using (Html.BeginForm())
+{
+    <p>
+        جستجو بر اساس: @Html.TextBox("SearchString")
+        <input type="submit" value="جستجوی" />
+    </p>
+}
+<br />
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr class="bg-info">
+            <th>
+                @Html.ActionLink("پروژه", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*نام پروژه*@
+            </th>
+            <th>
+                @Html.ActionLink("آدرس", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*@Html.DisplayNameFor(model => model.Address)*@
+            </th>
+            <th>
+                @Html.ActionLink("نوع ملک", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*نوع ملک*@
+            </th>
+            <th>
+                @Html.ActionLink("پلاک اصلی", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*@Html.DisplayNameFor(model => model.PAsli)*@
+            </th>
+            <th>
+                @Html.ActionLink("پلاک فرعی", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*@Html.DisplayNameFor(model => model.PFarei)*@
+            </th>
+            <th>
+                @Html.ActionLink("مساحت عرصه", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*@Html.DisplayNameFor(model => model.MArseh)*@
+            </th>
+            <th>
+                @Html.ActionLink("مساحت اعیان", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+
+                @*@Html.DisplayNameFor(model => model.MAyan)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Project_name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MelkType.TypeMelk_Desc)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PAsli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PFarei)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MArseh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MAyan)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Melk_ID"
+                       class="btn btn-info"><i class="fa fa-edit"></i>ویرایش</a> |
+                    @*<a asp-action="Details" asp-route-id="@item.Melk_ID"
+                        class="btn btn-success"><i class="fa fa-info-circle"></i>جزئیات</a> |*@
+                    <a asp-action="Delete" asp-route-id="@item.Melk_ID"
+                       class="btn btn-danger"><i class="fa fa-trash"></i>حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+
+@*@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+<script>
+    function myfunction(value) {
+        document.getElementById("h").value = value;
+        alert(t.value);
+
+    }
+</script>

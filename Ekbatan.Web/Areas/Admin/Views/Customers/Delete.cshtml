@@ -1,0 +1,71 @@
+﻿@model Ekbatan.DomainClasses.Customer.Customer
+
+@{
+    ViewData["Title"] = " حذف مشخصات مشتری";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2 class="btn btn-primary">حذف رکورد مشتریان</h2>
+<br/>
+
+<h3  class="btn btn-danger" >آیا از حذف رکورد حاری مشخصات مشتریان مطمئن هستید؟</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CFamily)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CFamily)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MelliCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MelliCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SHNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SHNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MobilePhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Customer_ID" />
+        <input type="submit" value="حذف" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-info"> بازگشت به لیست مشتریان</a>
+    </form>
+</div>

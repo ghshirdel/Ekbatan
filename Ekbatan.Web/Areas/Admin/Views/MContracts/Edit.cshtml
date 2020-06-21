@@ -1,0 +1,70 @@
+﻿@using Ekbatan.Services.Repositories
+@using Ekbatan.DomainClasses
+@model Ekbatan.DomainClasses.MContract.MContract
+@inject IMelkRepository melkRepository
+@{
+    ViewData["Title"] = "ویرایش";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h4 class="btn btn-primary"><i class="fa fa-edit"></i> ویرایش قرارداد </h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Contract_ID" />
+            <div class="form-group">
+                <label asp-for="Contract_No" class="control-label"></label>
+                <input asp-for="Contract_No" class="form-control" />
+                <span asp-validation-for="Contract_No" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contract_Date" class="control-label"></label>
+                <input asp-for="Contract_Date" class="form-control" type="datetime" />
+                <span asp-validation-for="Contract_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mel_ID" class="control-label"></label>
+                <input asp-for="Mel_ID" class="form-control" />
+                <span asp-validation-for="Mel_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>شماره ملک</th>
+                <th>آدرس</th>
+                <th>پلاک اصلی</th>
+                <th>پلاک فرعی</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @{
+                    var melk = melkRepository.GetMelkById(Model.Mel_ID);
+                }
+                <th>@melk.Melk_ID</th>
+                <td>@melk.Address</td>
+                <td>@melk.PAsli</td>
+                <td>@melk.PFarei</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-info">بازگشت به لیست قراردادها</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
